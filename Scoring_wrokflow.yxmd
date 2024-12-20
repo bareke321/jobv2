@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="29" y="4" width="1050" height="497" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 38</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="54" y="257" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\7.5.TPRS_JPK_JE\241217_DortmundTest_LG\3.Alteryx\API_flows\output\JPK_tab\JPK_tab.yxdb</File>
+              <FormatSpecificOptions />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>JPK_tab.yxdb</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Rok" size="255" source="Summarize: GroupBy - Rok" type="V_WString" />
+                <Field name="Miesiac" size="255" source="Summarize: GroupBy - Miesiac" type="V_WString" />
+                <Field name="DataZakupu/Wystawiena" source="Summarize: GroupBy - DataZakupu/Wystawiena" type="Date" />
+                <Field name="DataWplywu" source="Summarize: GroupBy - DataWplywu" type="Date" />
+                <Field name="NIP (nr podatkowy) kontrahenta" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                <Field name="NazwaKontrahenta" size="313" source="Summarize: GroupBy - NazwaKontrahenta" type="V_WString" />
+                <Field name="Rodzaj transakcji" size="1073741823" source="Summarize: GroupBy - Rodzaj transakcji" type="V_WString" />
+                <Field name="DowodTransakcji" size="255" source="Summarize: GroupBy - DowodTransakcji" type="V_WString" />
+                <Field name="Sum_Net" source="Formula: IIF(IsNull([_CurrentField_]),0,[_CurrentField_])" type="Double" />
+                <Field name="Sum_Vat" source="Formula: IIF(IsNull([_CurrentField_]),0,[_CurrentField_])" type="Double" />
+                <Field name="KodKrajuNadaniaTIN" size="255" source="Formula: if IsEmpty([KodKrajuNadaniaTIN]) or contains([KodKrajuNadaniaTIN],&quot;brak&quot;) then [Last_KodKrajuNadaniaTIN] else [KodKrajuNadaniaTIN] endif" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="54" y="53" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">.\input\Scoring_test.xlsx|||`TEST$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Scoring_test.xlsx
+Query=`TEST$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ID" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\Scoring_test.xlsx|||`TEST$`" type="V_String" />
+                <Field name="Info" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\Scoring_test.xlsx|||`TEST$`" type="V_WString" />
+                <Field name="prog_dolny" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\Scoring_test.xlsx|||`TEST$`" type="Double" />
+                <Field name="prog_gorny" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\Scoring_test.xlsx|||`TEST$`" type="Double" />
+                <Field name="scoring" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\Scoring_test.xlsx|||`TEST$`" type="Double" />
+                <Field name="expression" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\Scoring_test.xlsx|||`TEST$`" type="V_String" />
+                <Field name="Exp_data" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\Scoring_test.xlsx|||`TEST$`" type="V_WString" />
+                <Field name="Grup_test" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\Scoring_test.xlsx|||`TEST$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="138" y="53" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="222" y="54" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="Info" />
+                <Field name="expression" />
+                <Field name="ID" selected="False" />
+                <Field name="prog_dolny" selected="False" />
+                <Field name="prog_gorny" selected="False" />
+                <Field name="scoring" selected="False" />
+                <Field name="Exp_data" selected="False" />
+                <Field name="Grup_test" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <CopyOutput value="False" />
+              <Expression>Replace([_CurrentField_],"prog_dolny",tostring([prog_dolny]))</Expression>
+              <ChangeFieldType value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Replace([_CurrentField_],"prog_dolny",tostring([prog_dolny]))</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="318" y="53" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="Info" />
+                <Field name="expression" />
+                <Field name="ID" selected="False" />
+                <Field name="prog_dolny" selected="False" />
+                <Field name="prog_gorny" selected="False" />
+                <Field name="scoring" selected="False" />
+                <Field name="Exp_data" selected="False" />
+                <Field name="Grup_test" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <CopyOutput value="False" />
+              <Expression>Replace([_CurrentField_],"prog_gorny",tostring([prog_gorny]))</Expression>
+              <ChangeFieldType value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Replace([_CurrentField_],"prog_gorny",tostring([prog_gorny]))</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="390" y="53" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="Info" />
+                <Field name="expression" />
+                <Field name="ID" selected="False" />
+                <Field name="prog_dolny" selected="False" />
+                <Field name="prog_gorny" selected="False" />
+                <Field name="scoring" selected="False" />
+                <Field name="Exp_data" selected="False" />
+                <Field name="Grup_test" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <CopyOutput value="False" />
+              <Expression>Replace([_CurrentField_],"scoring",tostring([scoring]))</Expression>
+              <ChangeFieldType value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Replace([_CurrentField_],"scoring",tostring([scoring]))</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+            <Position x="185" y="281" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldName>RecordID</FieldName>
+              <StartValue>1</StartValue>
+              <FieldType>Int32</FieldType>
+              <FieldSize>6</FieldSize>
+              <Position>0</Position>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="954" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>!=</Operator>
+                <Field>expression</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2024-12-17 14:24:09</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>0</Operand>
+                  <StartDate>2024-12-17 14:24:09</StartDate>
+                  <EndDate>2024-12-17 14:24:09</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[expression] != 0</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="678" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="expression" selected="True" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings>
+            <Position x="582" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="BatchMacroGroupBy" />
+              <Value name="ControlParams"><![CDATA[Control Parameter (2)=expression
+Control Parameter (8)=Exp_data
+Control Parameter (10)=Info
+Control Parameter (12)=ID
+]]></Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name>Scoring_macro (12)</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output6">
+              <RecordInfo>
+                <Field name="Avg_Sum_Net" source="Summarize: Avg - Sum_Net" type="Double" />
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+                <Field name="Rok" size="255" source="Summarize: GroupBy - Rok" type="V_WString" />
+                <Field name="Miesiac" size="255" source="Summarize: GroupBy - Miesiac" type="V_WString" />
+                <Field name="DataZakupu/Wystawiena" source="Summarize: GroupBy - DataZakupu/Wystawiena" type="Date" />
+                <Field name="DataWplywu" source="Summarize: GroupBy - DataWplywu" type="Date" />
+                <Field name="NIP (nr podatkowy) kontrahenta" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                <Field name="NazwaKontrahenta" size="313" source="Summarize: GroupBy - NazwaKontrahenta" type="V_WString" />
+                <Field name="Rodzaj transakcji" size="1073741823" source="Summarize: GroupBy - Rodzaj transakcji" type="V_WString" />
+                <Field name="DowodTransakcji" size="255" source="Summarize: GroupBy - DowodTransakcji" type="V_WString" />
+                <Field name="Sum_Net" source="Formula: IIF(IsNull([_CurrentField_]),0,[_CurrentField_])" type="Double" />
+                <Field name="Sum_Vat" source="Formula: IIF(IsNull([_CurrentField_]),0,[_CurrentField_])" type="Double" />
+                <Field name="KodKrajuNadaniaTIN" size="255" source="Formula: if IsEmpty([KodKrajuNadaniaTIN]) or contains([KodKrajuNadaniaTIN],&quot;brak&quot;) then [Last_KodKrajuNadaniaTIN] else [KodKrajuNadaniaTIN] endif" type="V_WString" />
+                <Field name="expression" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+                <Field name="Info" size="1073741823" source="Formula: Replace([Info], &quot;{dane}&quot;, [Exp_data])" type="V_WString" />
+                <Field name="ID" size="2147483647" source="Formula: (Multiple Sources)" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Scoring_macro.yxmc" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="186" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Sum_Net" action="Avg" rename="Avg_Sum_Net" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+            <Position x="390" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <CartesianMode>Allow</CartesianMode>
+              <SelectConfiguration>
+                <Configuration outputConnection="Output">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="486" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings>
+            <Position x="486" y="53" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">False</Value>
+              <Value name="List Box (11)">"ID","Info","prog_dolny","prog_gorny","scoring","expression","Exp_data","Grup_test"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="798" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>ID</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2024-12-17 15:18:09</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>test_3</Operand>
+                  <StartDate>2024-12-17 15:18:09</StartDate>
+                  <EndDate>2024-12-17 15:18:09</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[ID] = "test_3"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="17" y="605" width="152" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 39</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="42" y="654" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>TB_all.xlsx
+Query=`data$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="AccountNumber" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="AccountName" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="Date" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_String" />
+                <Field name="FS lvl1 (A-type)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="FS lvl2 (A-type)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="FS lvl1 (B-type)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="FS lvl2 (B-type)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="Value" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_String" />
+                <Field name="SelectType" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_String" />
+                <Field name="Adjustment" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_String" />
+                <Field name="SelectCurrency" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_String" />
+                <Field name="Company" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="Value(K)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_String" />
+                <Field name="FS Type" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_String" />
+                <Field name="NWC/ND" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="Adj.Name" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="FS lvl3 (A-type)" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="FS lvl4 (A-type)" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="FS lvl3 (B-type)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="FS lvl4 (B-type)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="FS lvl5 (both types)" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="NWC/ND lvl 1" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="NWC/ND lvl 2" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="Year End" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_String" />
+                <Field name="AdjustmentsType" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="Double" />
+                <Field name="FS lvl1 (C-type)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+                <Field name="FS lvl2 (C-type)" size="255" source="File: C:\Users\lukaszgordon\OneDrive - KPMG\Alteryx\0.AlteryxSolutions\002.Scoring_transakcji\input\TB_all.xlsx|||`data$`" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="27" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="22" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="22" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output6" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="36" Connection="Input3" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output26" />
+      <Destination ToolID="36" Connection="Control" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Scoring_wrokflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="662ddfaa-081d-41ee-89d8-8392d0c50507" />
+      <Telemetry>
+        <PreviousWorkflowId value="d1204907-d4f4-4482-989f-d8a9e751ef4d" />
+        <OriginWorkflowId value="d1204907-d4f4-4482-989f-d8a9e751ef4d" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
